@@ -11,6 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Docker login
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: docker build user
-        run:  |
-          docker build ./Backend/User -t lilian/user:1.0.0
+        run: |
+          docker build ./Backend/User -t lilywd/microservice2.0:1.0.0
+      - name: docker push 
+        run: |
+          docker push lilywd/microservice2.0:1.0.0
