@@ -10,7 +10,7 @@ from .permissions import IsStaff, Admin
 @api_view(["GET"])
 def ping(request):
     message = {"reply": "ping"}
-    return Response(message)
+    return Response(message, status=status.HTTP_200_OK)
 
 @api_view(["GET"])
 @permission_classes([Admin])
@@ -58,4 +58,12 @@ def removeStaff(request):
     user.is_admin = False
     user.is_staff = False
     user.save()
+    return Response(status= status.HTTP_200_OK)
+
+@api_view(["POST"])
+@permission_classes([Admin])
+def deleteUser(request):
+    email = request.data.get("email")
+    user = get_object_or_404(User, email=email)
+    user.delete()
     return Response(status= status.HTTP_200_OK)
