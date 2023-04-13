@@ -21,6 +21,7 @@ jobs:
       - name: Execute tests
 #         env:
 #           DJANGO_SETTINGS_MODULE: mysite.settings
+        working-directory: ./Backend/User
         run: python3 manage.py test
   build:
     needs: test
