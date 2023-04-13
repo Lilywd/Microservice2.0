@@ -14,7 +14,7 @@ jobs:
       - name: Update
         run: sudo apt update
       - name: change directory
-        working-directory:  ./Backend/User
+        working-directory: ./Backend/User
       - name: Install pip
         run: sudo apt install python3-pip
       - name: Install requirements
