@@ -12,7 +12,7 @@ schema_view = get_schema_view(
       description="This documentation shows all the endpoints available for the user Microservice",
       terms_of_service="https://www.me.popsicool.tech",
       contact=openapi.Contact(email="akinolasamson1234@gmail.com"),
-      license=openapi.License(name="Lilian Wanjiku"),
+      license=openapi.License(name="Samson Akinola"),
    ),
    public=True,
    permission_classes=[permissions.AllowAny],
