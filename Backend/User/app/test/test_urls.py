@@ -11,6 +11,9 @@ class TestUrls(SimpleTestCase):
     def test_isAdmin_url(self):
         url = reverse("is-admin")
         self.assertEquals(resolve(url).func, views.IsAdmin)
+    def test_isAuth_url(self):
+        url = reverse("is-auth")
+        self.assertEquals(resolve(url).func, views.IsAuth)
     def test_IsStaff_url(self):
         url = reverse("is-staff")
         self.assertEquals(resolve(url).func, views.IsStaff)
