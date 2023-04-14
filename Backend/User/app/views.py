@@ -18,6 +18,11 @@ def IsAdmin(request):
     return Response(status= status.HTTP_200_OK)
 
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def IsAuth(request):
+    return Response(status= status.HTTP_200_OK)
+
+@api_view(["GET"])
 @permission_classes([IsAuthenticated, IsStaff])
 def IsStaff(request):
     return Response(status= status.HTTP_200_OK)

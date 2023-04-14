@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path("", views.ping, name="ping"),
+    path("isAuth", views.IsAuth, name="is-auth"),
     path("isAdmin", views.IsAdmin, name="is-admin"),
     path("isStaff", views.IsStaff, name="is-staff"),
     path("deleteUser", views.deleteUser, name="delete-user"),
