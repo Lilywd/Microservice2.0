@@ -22,7 +22,7 @@ jobs:
         env:
          DJANGO_SETTINGS_MODULE: mysite.settings
          working-directory: ./Backend/User
-         run: python3 manage.py test
+        run: python3 manage.py test
   build_user:
     needs: test_user
     runs-on: ubuntu-latest
