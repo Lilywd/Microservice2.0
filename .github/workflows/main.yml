@@ -73,3 +73,36 @@ jobs:
       - name: docker push 
         run: |
           docker push lilywd/microservice2.0:2.0.0
+  test_review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update
+        run: sudo apt update
+      - name: Install pip
+        run: sudo apt install python3-pip
+      - name: Install requirements
+        working-directory: ./Backend/Reviews
+        run: pip install -r requirements.txt
+      - name: Execute tests
+        env:
+         DJANGO_SETTINGS_MODULE: Review.settings
+        working-directory: ./Backend/Reviews
+        run: python3 manage.py test
+  build_review:
+    needs: test_review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker login
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - name: docker build review
+        run: |
+          docker build ./Backend/Reviews -t lilywd/microservice2.0:3.0.0
+      - name: docker push 
+        run: |
+          docker push lilywd/microservice2.0:3.0.0
