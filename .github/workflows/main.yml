@@ -72,4 +72,4 @@ jobs:
           docker build ./Backend/Notifications -t lilywd/microservice2.0:2.0.0
       - name: docker push 
         run: |
-          docker push lilywd/microservice2.0:1.0.0
+          docker push lilywd/microservice2.0:2.0.0
