@@ -20,7 +20,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Execute tests
         env:
-         DJANGO_SETTINGS_MODULE: user.settings
+         DJANGO_SETTINGS_MODULE: User.settings
         working-directory: ./Backend/User
         run: python3 manage.py test
   build_user:
