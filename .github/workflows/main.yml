@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  test:
+  test_user:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,8 +23,8 @@ jobs:
 # #           DJANGO_SETTINGS_MODULE: mysite.settings
 #         working-directory: ./Backend/User
 #         run: python3 manage.py test
-  build:
-    needs: test
+  build_user:
+    needs: test_user
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -37,6 +37,39 @@ jobs:
       - name: docker build user
         run: |
           docker build ./Backend/User -t lilywd/microservice2.0:1.0.0
+      - name: docker push 
+        run: |
+          docker push lilywd/microservice2.0:1.0.0
+  test_notification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update
+        run: sudo apt update
+      - name: Install pip
+        run: sudo apt install python3-pip
+      - name: Install requirements
+        working-directory: ./Backend/Notifications
+        run: pip install -r requirements.txt
+#       - name: Execute tests
+# #         env:
+# #           DJANGO_SETTINGS_MODULE: mysite.settings
+#         working-directory: ./Backend/User
+#         run: python3 manage.py test
+  build1:
+    needs: test_notification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker login
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - name: docker build user
+        run: |
+          docker build ./Backend/Notifications -t lilywd/microservice2.0:2.0.0
       - name: docker push 
         run: |
           docker push lilywd/microservice2.0:1.0.0
