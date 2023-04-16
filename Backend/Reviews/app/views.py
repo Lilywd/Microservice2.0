@@ -32,14 +32,13 @@ class ProductComments(generics.GenericAPIView):
         for data in serializer.data:
             url = "http://localhost:8002/user_details/{}".format(data['userID'])
             response = requests.get(url).json()
-            print(response)
             data["name"] = response["name"]
             data["picture"] = response["pics"]
             comments.append(data)
         return Response(data = comments, status =status.HTTP_200_OK)
 
 
-class ProductCommentsSingle(generics.GenericAPIView):
+class UserProductComments(generics.GenericAPIView):
     serializer_class = ProductCommentsSerializer
     def patch(self, request, pk, ui):
         product = get_object_or_404(ProductCommentModel, productID = pk, userID = ui)
@@ -54,3 +53,22 @@ class ProductCommentsSingle(generics.GenericAPIView):
         product = get_object_or_404(ProductCommentModel, productID = pk, userID = ui)
         product.delete()
         return Response(status= status.HTTP_204_NO_CONTENT)
+
+
+class ProductCommentsDelete(generics.GenericAPIView):
+    serializer_class = ProductCommentsSerializer
+    queryset = ProductCommentModel.objects.all()
+    def delete(self, request, pk):
+        products = ProductCommentModel.objects.filter(productID = pk)
+        for data in products:
+            data.delete()
+        return Response(status =status.HTTP_204_NO_CONTENT)
+
+class UserCommentsDelete(generics.GenericAPIView):
+    serializer_class = ProductCommentsSerializer
+    queryset = ProductCommentModel.objects.all()
+    def delete(self, request, pk):
+        products = ProductCommentModel.objects.filter(userID = pk)
+        for data in products:
+            data.delete()
+        return Response(status =status.HTTP_204_NO_CONTENT)
