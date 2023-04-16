@@ -12,4 +12,5 @@ urlpatterns = [
     path("addStaff", views.addStaff, name="add-staff"),
     path("removeStaff", views.removeStaff, name="remove-staff"),
     path("update_profile", views.UpdateProfile.as_view(), name= "update_profile"),
+    path("user_details/<str:pk>", views.userDetails, name= "user_details")
 ]

@@ -40,3 +40,6 @@ class TestUrls(SimpleTestCase):
     def test_UpdateProfile_url(self):
         url = reverse("update_profile")
         self.assertEquals(resolve(url).func.view_class, views.UpdateProfile)
+    def test_user_details_url(self):
+        url = reverse("user_details", kwargs={'pk': 1})
+        self.assertEquals(resolve(url).func, views.userDetails)

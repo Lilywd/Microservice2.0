@@ -84,3 +84,11 @@ class UpdateProfile(generics.GenericAPIView):
             serializer.save()
             return Response(data=serializer.data, status =status.HTTP_200_OK)
         return Response(data= serializer.errors, status= status.HTTP_400_BAD_REQUEST)
+
+@api_view(["GET"])
+def userDetails(request, pk):
+    user = get_object_or_404(User, id = pk)
+    data = {}
+    data["name"] = user.first_name + " " + user.last_name
+    data["pics"] = user.profile_picture.url
+    return Response(data = data, status= status.HTTP_200_OK)
