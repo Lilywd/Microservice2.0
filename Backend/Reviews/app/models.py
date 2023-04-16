@@ -8,6 +8,7 @@ class ProductCommentModel(models.Model):
     comment = models.TextField()
     edited = models.BooleanField(default = False)
     created_at = models.DateTimeField(auto_now_add=True)
+    rating = models.IntegerField( default = 5)
     updated_at = models.DateTimeField(auto_now=True)
     class Meta:
         unique_together = ('userID', 'productID',)
