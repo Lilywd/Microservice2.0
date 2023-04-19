@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from .serializers import User, UserUpdate
 from .permissions import IsStaff, Admin
+import requests
 # Create your views here.
 
 @api_view(["GET"])
@@ -70,6 +71,9 @@ def removeStaff(request):
 def deleteUser(request):
     email = request.data.get("email")
     user = get_object_or_404(User, email=email)
+    id = user.id
+    # url = f"http://localhost:8002/delete_all_user_comment/{id}"
+    # requests.delete(url)
     user.delete()
     return Response(status= status.HTTP_200_OK)
 

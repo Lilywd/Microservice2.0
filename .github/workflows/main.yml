@@ -106,8 +106,41 @@ jobs:
       - name: docker push
         run: |
           docker push lilywd/microservice2.0:3.0.0
+  test_api_gateway:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update
+        run: sudo apt update
+      - name: Install pip
+        run: sudo apt install python3-pip
+      - name: Install requirements
+        working-directory: ./Backend/ApiGateway
+        run: pip install -r requirements.txt
+      - name: Execute tests
+#         env:
+#           DJANGO_SETTINGS_MODULE: mysite.settings
+        working-directory: ./Backend/ApiGateway
+        run: python3 test.py
+  build_api_gateway:
+    needs: test_api_gateway
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker login
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - name: docker build api gateway
+        run: |
+          docker build ./Backend/ApiGateway -t lilywd/microservice2.0:4.0.0
+      - name: docker push
+        run: |
+          docker push lilywd/microservice2.0:4.0.0
   server:
-    needs: [build_user, build_notification, build_review]
+    needs: [build_user, build_notification, build_review, build_api_gateway]
     runs-on: ubuntu-latest
     steps:
       - name: print deployment
