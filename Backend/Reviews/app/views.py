@@ -30,7 +30,7 @@ class ProductComments(generics.GenericAPIView):
         serializer = self.serializer_class(products, many = True)
         comments = []
         for data in serializer.data:
-            url = "http://localhost:8002/user_details/{}".format(data['userID'])
+            url = "http://localhost:8001/user_details/{}".format(data['userID'])
             response = requests.get(url).json()
             data["name"] = response["name"]
             data["picture"] = response["pics"]
