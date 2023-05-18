@@ -1,9 +1,12 @@
+import { Pages } from "./components/home/pages/Pages"
+import "./style/main.scss"
+
 function App() {
   return (
     <>
-    <h1>Hello</h1>
+     <Pages />
     </>
-   );
+   )
 }
 
-export default App;
+export default App
