@@ -1,19 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import { BiSearch } from "react-icons/bi"
-// import { products } from "../../assets/data/data"
-// import { SearchItems } from "./SearchItems"
+import { products } from "../../assets/data/data"
+import { SearchItems } from "./SearchItems"
 
 export const Hero = () => {
-  // search
-  // const [value, setValue] = useState("")
-  // const onChanage = (e) => {
-  //   setValue(e.target.value)
-  // }
+  
+  const [value, setValue] = useState("")
+  const onChanage = (e) => {
+    setValue(e.target.value)
+  }
 
-  // const onSearch = (key) => {
-  //   setValue(key)
-  //   console.log("search", key)
-  // }
+  const onSearch = (key) => {
+    setValue(key)
+    console.log("search", key)
+  }
   return (
     <>
       <section className='hero'>
@@ -31,12 +31,12 @@ export const Hero = () => {
           <div className='search'>
             <span>All Categories</span>
             <hr />
-            <input type='text' placeholder='Search Candles...' />
+            <input type='text' placeholder='Search Candles...' onChange={onChanage} value={value}/>
             <button>
               <BiSearch className='serachIcon heIcon' />
             </button>
           </div>
-          {/* <SearchItems products={products} value={value} onSearch={onSearch} /> */}
+          <SearchItems products={products} value={value} onSearch={onSearch} />
           <p>Examples: Oriental Scented Candle</p>
         </div>
       </section>

@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { topProducts } from "../../assets/data/data"
 import { Heading } from "../../common/Heading"
-import { ProductItems } from "../product/ProductItems"
+import { ProductItem } from "../product/ProductItems"
 
 export const TopProduct = () => {
-  const [cartItems, setCartItems] = useState(topProducts)
-  const allCategories = ["all", ...new Set(cartItems.map((item) => item.category))]
+  const [data, setdata] = useState(topProducts)
+  const allCategories = ["all", ...new Set(data.map((item) => item.category))]
   const [category, setCategory] = useState(allCategories)
 
   /*console.log(setCartItems)
@@ -14,10 +14,10 @@ export const TopProduct = () => {
 
   const handleFilter = (category) => {
     const newItem = topProducts.filter((item) => item.category === category)
-    setCartItems(newItem)
+    setCategory(newItem)
 
     if (category === "all") {
-      setCartItems(topProducts)
+      setCategory(topProducts)
       return
     }
   }
@@ -26,7 +26,7 @@ export const TopProduct = () => {
       <section className='topproduct'>
         <div className='container'>
           <div className='head'>
-            <Heading title='Top Selling Products' desc='Meet our newbies! The latest templates uploaded to the marketplace.' />
+            <Heading title='Top Selling Products' desc='Multipurpose candles for every home! Giving light to the world.' />
             <div className='category'>
               {category.map((category) => (
                 <button className='button' onClick={() => handleFilter(category)}>
@@ -35,7 +35,7 @@ export const TopProduct = () => {
               ))}
             </div>
           </div>
-          <ProductItems cartItems={cartItems} />
+          <ProductItem data={data} />
         </div>
       </section>
     </>

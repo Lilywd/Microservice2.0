@@ -62,7 +62,7 @@ export const products = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: 30.0,
-    category: "mockups",
+    category: "Aromatic",
     qty: 0,
   },
   {
@@ -71,7 +71,7 @@ export const products = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: 10.0,
-    category: "mockups",
+    category: "Aromatic",
     qty: 0,
   },
   {
@@ -80,7 +80,7 @@ export const products = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: 20.0,
-    category: "images stocks",
+    category: "Water",
     qty: 0,
   },
   {
@@ -89,7 +89,7 @@ export const products = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: 40.0,
-    category: "images stocks",
+    category: "Water",
     qty: 0,
   },
   {
@@ -98,7 +98,7 @@ export const products = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "50.00",
-    category: "web theme",
+    category: "Green",
     qty: 0,
   },
   {
@@ -107,7 +107,7 @@ export const products = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "web theme",
+    category: "Green",
     qty: 0,
   },
   {
@@ -116,7 +116,7 @@ export const products = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "icons",
+    category: "Green",
     qty: 0,
   },
   {
@@ -125,23 +125,23 @@ export const products = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "icons",
+    category: "Green",
     qty: 0,
   },
 ]
 export const banner = [
   {
     id: 1,
-    title1: "Simple IPhone ",
-    title2: "Mockups Design PSD, Ai, EPS",
-    desc: "Sale 30% Off For Members",
+    title1: "Aromatice ",
+    title2: "Lavender",
+    desc: "Takes A Aroma, But It Keeps On Ticking.",
     cover: "../images/banner/b2.png",
   },
   {
     id: 2,
-    title1: "Mockup PSD",
-    title2: "50+ Ui Screen Mockups",
-    desc: "Sale 30% Off For Members",
+    title1: "Citrus",
+    title2: "Mandarin",
+    desc: "A Candle A Day Helps You Work, Rest And Play.",
     cover: "../images/banner/b1.png",
   },
 ]
@@ -150,18 +150,18 @@ export const topProducts = [
     id: 20,
     cover: "../images/product/7-1-1.jpg",
     title: "Candle",
-    author: "by Blueskytechco in Mockups",
+    author: "by Blueskytechco in Aromatic",
     price: "30.00",
-    category: "icons",
+    category: "Green",
     qty: 0,
   },
   {
     id: 21,
     cover: "../images/product/8-1.jpg",
     title: "Candle",
-    author: "by Blueskytechco in Mockups",
+    author: "by Blueskytechco in Aromatic",
     price: "30.00",
-    category: "icons",
+    category: "Green",
     qty: 0,
   },
   {
@@ -170,7 +170,7 @@ export const topProducts = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "web theme",
+    category: "Green",
     qty: 0,
   },
 
@@ -180,7 +180,7 @@ export const topProducts = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "web theme",
+    category: "Green",
     qty: 0,
   },
   {
@@ -189,7 +189,7 @@ export const topProducts = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "images stocks",
+    category: "Citrus",
     qty: 0,
   },
   {
@@ -198,7 +198,7 @@ export const topProducts = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "images stocks",
+    category: "Citrus",
     qty: 0,
   },
   {
@@ -207,7 +207,7 @@ export const topProducts = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "mockups",
+    category: "Fruity",
     qty: 0,
   },
   {
@@ -216,7 +216,7 @@ export const topProducts = [
     title: "Candle",
     author: "by LEHKY.CO",
     price: "30.00",
-    category: "mockups",
+    category: "Fruity",
     qty: 0,
   },
 ]

@@ -7,7 +7,7 @@ export const Testimonial = () => {
   return (
     <>
       <section className='customer'>
-        <Heading title='Choose The Plans' desc='Meet our newbies! The latest templates uploaded to the marketplace.' />
+        <Heading title='Choose The Plans' desc='Multipurpose candles for every home! Giving light to the world.' />
 
         <div className='content'>
           {customer.map((items) => (

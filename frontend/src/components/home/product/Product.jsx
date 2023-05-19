@@ -10,7 +10,7 @@ export const Product = () => {
     <>
       <section className='product'>
         <div className='container'>
-          <Heading title='Trendings Products' desc='Check Here' />
+          <Heading title='Products' desc='Check Here' />
 
           <ProductItem data={data} />
         </div>

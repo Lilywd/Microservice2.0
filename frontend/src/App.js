@@ -1,12 +1,15 @@
-import { Pages } from "./components/home/pages/Pages"
+import React from "react"
+import { Pages } from "./components/pages/Pages"
 import "./style/main.scss"
+// import { Provider } from "react-redux"
+// import store from "./controller/store"
 
-function App() {
+function App () {
   return (
     <>
-     <Pages />
+        <Pages />
     </>
-   )
+  )
 }
 
 export default App

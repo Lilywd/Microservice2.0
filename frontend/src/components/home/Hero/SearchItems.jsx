@@ -1,15 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 import { FiShoppingBag, FiSearch } from "react-icons/fi"
 import { AiOutlineHeart } from "react-icons/ai"
-import { useDispatch } from "react-redux"
-import { ADD } from "../../../controller/action"
+// import { useDispatch } from "react-redux"
+// import { ADD } from "../../../controller/action"
 
 // all copy past from productItem page
 
 export const SearchItems = ({ products, value, onSearch }) => {
-  const dispatch = useDispatch()
-  const addToCart = (e) => {
-    dispatch(ADD(e))
+  const [openImage, setOpenImage] = useState(false)
+  const [img, setImg] = useState("")
+
+  const onOpenImage = (src) => {
+    setImg(src)
+    setOpenImage(true)
+  // const dispatch = useDispatch()
+  // const addToCart = (e) => {
+  //   dispatch(ADD(e))
   }
 
   return (
@@ -28,7 +34,7 @@ export const SearchItems = ({ products, value, onSearch }) => {
               <div className='box' onClick={() => onSearch(items.title)} key={items.id}>
                 <div className='img'>
                   <img src={items.cover} alt='' />
-                  <div className='overlay'>
+                  {/* <div className='overlay'>
                     <button className='button' onClick={() => addToCart(items)}>
                       <FiShoppingBag />
                     </button>
@@ -38,7 +44,7 @@ export const SearchItems = ({ products, value, onSearch }) => {
                     <button className='button'>
                       <FiSearch />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
                 <div className='details'>
                   <h3>{items.title}</h3>
