@@ -5,6 +5,7 @@ import {IoMdSpeedometer} from 'react-icons/io'
 import {BsTrophy, BsCreditCard2Front} from 'react-icons/bs'
 import {BiTrendingUp} from 'react-icons/bi'
 import {AiOutlinePieChart} from 'react-icons/ai'
+import {FaRegQuestionCircle} from 'react-icons/fa'
 import {MdDeliveryDining, MdOutlineExplore, MdOutlinePermContactCalendar} from 'react-icons/md'
 
 const Sidebar = () => {
@@ -24,7 +25,7 @@ const Sidebar = () => {
                     <a href='#' className='menuLink flex'>
                         <IoMdSpeedometer className = 'icon'/>
                         <span className="smallText">
-                            Dash Board
+                            Home
                         </span>
                     </a>
                 </li>                
@@ -33,7 +34,7 @@ const Sidebar = () => {
                     <a href='#' className='menuLink flex'>
                         <MdDeliveryDining className = 'icon'/>
                         <span className="smallText">
-                            My Orders
+                            Orders
                         </span>
                     </a>
                 </li>                
@@ -101,6 +102,18 @@ const Sidebar = () => {
                 </li>
 
             </ul>
+        </div>
+
+        <div className="sideBarCard">
+            <FaRegQuestionCircle className='icon'/>
+            <div className="cardContent">
+                <div className="circle1"></div>
+                <div className="circle2"></div>
+
+                <h3>Help Center</h3>
+                <p>Help center</p>
+                <button className='btn'>Help</button>
+            </div>
         </div>
     </div>
   )
