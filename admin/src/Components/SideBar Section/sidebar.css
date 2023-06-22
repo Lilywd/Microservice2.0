@@ -1,12 +1,12 @@
 :root {
-  --PrimaryColor: hsl(94, 59%, 35%);
+  --PrimaryColor: hsl(8, 85%, 57%);
   --HoverColor: #bdf094;
   --paleGreen: hsl(96, 75%, 89%);
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(0, 0, 18%);
-  --textColor: hsl(240, 1%, 48%);
-  --bgColor: hsla(60, 96%, 79%, 0.836);
-  --greyText: rgb(190, 190, 190);
+  --textColor: hsl(240, 5%, 22%);
+  --bgColor: hsl(34, 85%, 92%, 0.836);
+  --greyText: rgb(44, 40, 40);
   --inputColor: hsl(330, 12% 97%);
   /*Fonts and Typography*/
   --biggestFontSize: 2.5rem;
@@ -31,7 +31,7 @@
   cursor: pointer;
 }
 .sideBar .logoDiv img {
-  max-width: 20px;
+  max-width: 75px;
   margin-right: 0.5rem;
   background: var(--inputColor);
   border-radius: 2px;
