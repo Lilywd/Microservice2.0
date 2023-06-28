@@ -324,6 +324,6 @@
     padding: 2rem 1rem;
   }
   .topSection .cardSection .rightCard h1 {
-    font-size: var(--h1FontSize);
+    font-size: var(--h2FontSize);
   }
 }/*# sourceMappingURL=top.css.map */
