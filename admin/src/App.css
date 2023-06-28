@@ -17,7 +17,7 @@
     --blackColor: hsl(0, 0, 18%);
     --textColor: hsl(240, 1%, 38%);
     --bgColor: hsl(34, 85%, 92%, 0.836);
-    --greyText: rgb(58, 52, 52);
+    --greyText: rgb(95, 91, 91);
     --inputColor: hsl(330, 12% 97%);
 
     /*Fonts and Typography*/
@@ -108,4 +108,29 @@ body{
 
 ::-webkit-scrollbar{
   display: none;
+}
+
+/* MEDIA QUERIES =========> */
+@media screen and (max-width: 990px){
+    .heading{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 918px){
+    .heading{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .heading{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
 }

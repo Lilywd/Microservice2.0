@@ -2,12 +2,12 @@
 :root {
   --PrimaryColor: hsl(8, 85%, 57%);
   --HoverColor: #bdf094;
-  --paleGreen: hsl(96, 75%, 89%);
+  --paleGreen: hsl(42, 73%, 59%);
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(0, 0, 18%);
   --textColor: hsl(240, 1%, 38%);
   --bgColor: hsl(34, 85%, 92%);
-  --greyText: rgb(58, 52, 52);
+  --greyText: rgb(131, 128, 128);
   --inputColor: hsl(330, 12% 97%);
   --itemCardColor: hsl(120, 5%, 88%);
   --itemCardHover: hsl(120, 27%, 87%);
@@ -70,4 +70,23 @@
   top: 10px;
   right: 10px;
   color: var(--PrimaryColor);
+}
+
+@media screen and (max-width: 990px) {
+  .listingSection .sellers .card {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 918px) {
+  .listingSection .singleItem {
+    width: 200px !important;
+  }
+}
+@media screen and (max-width: 490px) {
+  .listingSection .sellers {
+    flex-direction: column;
+  }
+  .listingSection .sellers .card {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=listing.css.map */

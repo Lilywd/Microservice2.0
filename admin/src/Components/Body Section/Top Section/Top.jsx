@@ -7,7 +7,7 @@ import img from '../../../Assets/usericon2.png'
 import img2 from '../../../Assets/cpng.png'
 import video from '../../../Assets/banner.jpg'
 import { BsArrowRightShort } from 'react-icons/bs'
-// import { FaRegQuestionCircle } from 'react-icons/fa'
+import { FaRegQuestionCircle } from 'react-icons/fa'
 
 const Top = () => {
   return (
@@ -72,7 +72,7 @@ const Top = () => {
             </div>
 
             {/* Will be used Later*/}
-            {/* <div className="sideBarCard">
+            <div className="sideBarCard">
             <FaRegQuestionCircle className='icon'/>
             <div className="cardContent">
                 <div className="circle1"></div>
@@ -82,7 +82,7 @@ const Top = () => {
                 <p>Help center</p>
                 <button className='btn'>Help</button>
             </div>
-            </div> */}
+            </div>
 
           </div>
         </div>
